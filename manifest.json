@@ -16,5 +16,9 @@
     "gecko": {
       "id": "personal-dashboard@wolfpaw"
     }
+  },
+  "data_collection_permissions": {
+    "required": [],
+    "optional": []
   }
 }

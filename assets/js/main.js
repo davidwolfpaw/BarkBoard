@@ -421,8 +421,13 @@ function resolveFaviconDomain(service, settings) {
         getFavicon(domain).then((dataUrl) => {
           if (!dataUrl) return;
           const el = document.getElementById(`si-${s.id}`);
-          if (el)
-            el.innerHTML = `<img src="${dataUrl}" alt="" width="18" height="18">`;
+          if (!el) return;
+          const img = document.createElement("img");
+          img.src = dataUrl;
+          img.alt = "";
+          img.width = 18;
+          img.height = 18;
+          el.replaceChildren(img);
         });
       }
       continue;
@@ -433,8 +438,13 @@ function resolveFaviconDomain(service, settings) {
     getFavicon(domain).then((dataUrl) => {
       if (!dataUrl) return;
       const el = document.getElementById(`${service.id}-icon`);
-      if (el)
-        el.innerHTML = `<img src="${dataUrl}" alt="${service.label}" width="22" height="22">`;
+      if (!el) return;
+      const img = document.createElement("img");
+      img.src = dataUrl;
+      img.alt = service.label;
+      img.width = 22;
+      img.height = 22;
+      el.replaceChildren(img);
     });
   }
 
