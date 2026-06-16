@@ -1,0 +1,50 @@
+/*
+ * Default theme — adapts to the system dark/light preference.
+ *
+ * To create a custom theme:
+ *   1. Copy this file and give it a new name (e.g. assets/css/mytheme.css)
+ *   2. Set "theme": "mytheme" in assets/config.json
+ *   3. Override any of the variables below. Unused variables fall back to the
+ *      browser default, so you only need to define what you want to change.
+ *
+ * Available variables:
+ *
+ *   Layout & shape
+ *   --radius        Border radius of cards
+ *
+ *   Colours
+ *   --bg            Page background
+ *   --card-bg       Card background
+ *   --card-hover    Card background on hover
+ *   --text          Primary text
+ *   --muted         Secondary / label text
+ *   --border        Card border colour
+ *   --shadow        Card drop shadow
+ *   --active        Accent colour — used for hover borders and non-zero counts
+ */
+
+:root {
+  --radius: 14px;
+
+  --bg: #14151f;
+  --card-bg: #1e1f2e;
+  --card-hover: #272840;
+  --text: #e2e4f0;
+  --muted: #7a7c96;
+  --border: rgba(255, 255, 255, 0.07);
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  --active: #6366f1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f0f0f8;
+    --card-bg: #fff;
+    --card-hover: #f4f4ff;
+    --text: #1a1b2e;
+    --muted: #888;
+    --border: rgba(0, 0, 0, 0.08);
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --active: #4f51d0;
+  }
+}

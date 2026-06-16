@@ -1,0 +1,451 @@
+/* Structural styles only. Design values (colours, radius) come from the active
+   theme file loaded via <link id="theme-stylesheet"> in options.html. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.settings {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+}
+
+.settings-header h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.settings-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  padding: 1.4rem 1.6rem;
+}
+
+.settings-section h2 {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.1rem;
+  text-transform: uppercase;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: "SF Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.82rem;
+  padding: 0.55rem 0.8rem;
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  cursor: pointer;
+  padding-right: 2.2rem;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--active);
+  outline: none;
+}
+
+.field input::placeholder {
+  color: var(--muted);
+  opacity: 0.45;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.settings-footer {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.btn-save {
+  background: var(--active);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  transition: filter 0.15s ease;
+}
+
+.btn-save:hover {
+  filter: brightness(0.88);
+}
+
+.save-status {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.save-status--ok {
+  color: #4ade80;
+}
+
+.save-status--error {
+  color: #f87171;
+}
+
+.field-separator {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0.8rem 0 0.2rem;
+  text-transform: uppercase;
+}
+
+.field--inline {
+  align-items: center;
+  flex-direction: row;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.field--inline label {
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field--inline input[type="checkbox"] {
+  accent-color: var(--active);
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 15px;
+  width: 15px;
+}
+
+/* ── Refresh interval (number input + unit label) ─────────────────────────── */
+
+.field-with-unit {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.field-with-unit input {
+  width: 5rem;
+}
+
+.field-unit {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ── Background image upload ─────────────────────────────────────────────── */
+
+.bg-image-row {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.bg-preview {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-shrink: 0;
+  height: 54px;
+  justify-content: center;
+  overflow: hidden;
+  width: 88px;
+}
+
+.bg-preview-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.bg-preview-empty {
+  color: var(--muted);
+  font-size: 0.72rem;
+  opacity: 0.6;
+}
+
+.bg-image-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.btn-upload-bg,
+.btn-remove-bg {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.75rem;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn-upload-bg {
+  color: var(--text);
+}
+
+.btn-upload-bg:hover {
+  border-color: var(--active);
+  color: var(--active);
+}
+
+.btn-remove-bg {
+  color: var(--muted);
+}
+
+.btn-remove-bg:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* ── Back to dashboard button ─────────────────────────────────────────────── */
+
+.back-btn {
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  left: 1.25rem;
+  opacity: 0.5;
+  position: fixed;
+  text-decoration: none;
+  top: 1.4rem;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+/* ── Custom shortcuts ─────────────────────────────────────────────────────── */
+
+.shortcut-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.shortcut-row input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.7rem;
+  transition: border-color 0.15s ease;
+}
+
+.shortcut-row input:focus {
+  border-color: var(--active);
+  outline: none;
+}
+
+.shortcut-row input::placeholder {
+  color: var(--muted);
+  opacity: 0.45;
+}
+
+.shortcut-icon {
+  flex: none;
+  width: 2.8rem;
+  text-align: center;
+}
+
+.shortcut-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.shortcut-url {
+  flex: 3;
+  min-width: 0;
+}
+
+.btn-remove-shortcut {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  padding: 0.3rem;
+  transition:
+    color 0.15s,
+    opacity 0.15s;
+}
+
+.btn-remove-shortcut:hover {
+  color: #f87171;
+  opacity: 1;
+}
+
+.btn-add-shortcut {
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  padding: 0.45rem 1rem;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+  width: 100%;
+}
+
+.btn-add-shortcut:hover {
+  border-color: var(--active);
+  color: var(--active);
+}
+
+/* ── Package tracking ──────────────────────────────────────────────────────── */
+
+.package-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.package-row input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.7rem;
+  transition: border-color 0.15s ease;
+}
+
+.package-row input:focus {
+  border-color: var(--active);
+  outline: none;
+}
+
+.package-row input::placeholder {
+  color: var(--muted);
+  opacity: 0.45;
+}
+
+.package-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.package-number {
+  flex: 2;
+  min-width: 0;
+}
+
+.btn-remove-package {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  padding: 0.3rem;
+  transition:
+    color 0.15s,
+    opacity 0.15s;
+}
+
+.btn-remove-package:hover {
+  color: #f87171;
+  opacity: 1;
+}
+
+.btn-add-package {
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  padding: 0.45rem 1rem;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+  width: 100%;
+}
+
+.btn-add-package:hover {
+  border-color: var(--active);
+  color: var(--active);
+}

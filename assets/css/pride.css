@@ -1,0 +1,69 @@
+/*
+ * Pride theme — progress pride flag colours.
+ * Each card cycles through all 11 flag stripes as its border colour,
+ * with a matching soft glow shadow.
+ */
+
+:root {
+  --radius: 16px;
+
+  --bg: #0d0614;
+  --card-bg: #16092a;
+  --card-hover: #1e1040;
+  --text: #f8f0ff;
+  --muted: #b87fef;
+  --border: rgba(180, 100, 240, 0.2);
+  --shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+  --active: #f03aac;
+}
+
+/* Thicker borders so the flag colours read clearly against the dark background */
+.card {
+  border-width: 2px;
+}
+
+/* Progress Pride flag — 11 stripes, cycling in flag order */
+.card:nth-child(11n + 1) {
+  border-color: #222;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
+} /* black       */
+.card:nth-child(11n + 2) {
+  border-color: #784f16;
+  box-shadow: 0 2px 16px rgba(120, 79, 22, 0.4);
+} /* brown       */
+.card:nth-child(11n + 3) {
+  border-color: #e40303;
+  box-shadow: 0 2px 16px rgba(228, 3, 3, 0.35);
+} /* red         */
+.card:nth-child(11n + 4) {
+  border-color: #ff8c00;
+  box-shadow: 0 2px 16px rgba(255, 140, 0, 0.35);
+} /* orange      */
+.card:nth-child(11n + 5) {
+  border-color: #ffed00;
+  box-shadow: 0 2px 16px rgba(255, 237, 0, 0.3);
+} /* yellow      */
+.card:nth-child(11n + 6) {
+  border-color: #008026;
+  box-shadow: 0 2px 16px rgba(0, 128, 38, 0.35);
+} /* green       */
+.card:nth-child(11n + 7) {
+  border-color: #004dff;
+  box-shadow: 0 2px 16px rgba(0, 77, 255, 0.35);
+} /* blue        */
+.card:nth-child(11n + 8) {
+  border-color: #750787;
+  box-shadow: 0 2px 16px rgba(117, 7, 135, 0.45);
+} /* purple      */
+.card:nth-child(11n + 9) {
+  border-color: #5ccefa;
+  box-shadow: 0 2px 16px rgba(92, 206, 250, 0.35);
+} /* trans blue  */
+.card:nth-child(11n + 10) {
+  border-color: #f6a8b7;
+  box-shadow: 0 2px 16px rgba(246, 168, 183, 0.35);
+} /* trans pink  */
+.card:nth-child(11n + 11) {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 2px 16px rgba(255, 255, 255, 0.1);
+} /* trans white */

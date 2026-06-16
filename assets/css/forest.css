@@ -1,0 +1,30 @@
+/*
+ * Forest theme — deep canopy greens and earth tones, like standing in old woods.
+ * Adapts to light mode for a sunlit clearing feel.
+ */
+
+:root {
+  --radius: 10px;
+
+  --bg: #090e07;
+  --card-bg: #121a0f;
+  --card-hover: #1a2615;
+  --text: #dcefd0;
+  --muted: #7a9e6c;
+  --border: rgba(80, 140, 55, 0.2);
+  --shadow: 0 2px 18px rgba(0, 10, 0, 0.55);
+  --active: #5ab83e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eef5e8;
+    --card-bg: #f8fff4;
+    --card-hover: #edfae5;
+    --text: #1a2e14;
+    --muted: #5a7850;
+    --border: rgba(50, 110, 30, 0.15);
+    --shadow: 0 2px 12px rgba(20, 60, 10, 0.1);
+    --active: #2e7d1a;
+  }
+}
