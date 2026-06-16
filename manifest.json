@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BarkBoard - Personal Dashboard",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Personal stats dashboard on new tab.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
@@ -14,11 +14,11 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "personal-dashboard@wolfpaw"
+      "id": "personal-dashboard@wolfpaw",
+      "data_collection_permissions": {
+        "required": ["authenticationInfo"],
+        "optional": []
+      }
     }
-  },
-  "data_collection_permissions": {
-    "required": [],
-    "optional": []
   }
 }
