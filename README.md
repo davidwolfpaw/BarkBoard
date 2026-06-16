@@ -1,5 +1,7 @@
 # BarkBoard - Personal Dashboard
 
+![BarkBoard default theme](assets/screenshots/BarkBoard-Screenshot-Default.jpg)
+
 A browser extension that replaces the new-tab page with a personal stats dashboard. Cards show unread counts, upcoming calendar events, package tracking, and custom shortcuts — all pulling live data from your own API credentials stored locally in the extension.
 
 Built for Firefox; also works in Chrome 120+ (Manifest V3).
@@ -16,6 +18,10 @@ Built for Firefox; also works in Chrome 120+ (Manifest V3).
 - **Drag-to-reorder** and **edge-drag resize** for every card
 - **Themes** — swap colour schemes from Settings; add your own CSS file
 - **Background image** — upload any image; stored locally, never leaves the browser
+
+| Pride theme | Settings |
+|---|---|
+| ![Pride theme](assets/screenshots/BarkBoard-Screenshot-Pride.jpg) | ![Settings page](assets/screenshots/BarkBoard-Screenshot-Settings.jpg) |
 
 ---
 
@@ -173,6 +179,37 @@ To add a theme:
 2. Edit the custom properties (`--bg`, `--card-bg`, `--text`, etc.)
 3. Add `"mytheme"` to `assets/css/themes.json`
 4. Select it in Settings → Appearance → Theme
+
+---
+
+## Contributing
+
+Bug reports and pull requests are welcome on [GitHub](https://github.com/davidwolfpaw/BarkBoard).
+
+### Reporting bugs
+
+Open an issue with:
+- What you expected vs. what happened
+- Browser and version
+- Any console errors (F12 → Console)
+
+### Pull requests
+
+1. Fork the repo and create a branch from `main`
+2. Make your changes — no build step, just edit source files directly
+3. Run `npm run lint` and fix any errors before submitting
+4. Open a pull request with a clear description of what changed and why
+
+### Adding a service
+
+See the [Adding a new service](#adding-a-new-service) section — each service is a single self-contained file in `services/`. New services should follow the same structure as existing ones.
+
+### Code style
+
+- JS: ESLint (`eslint.config.mjs`) — run `npm run lint:fix` to auto-fix
+- CSS: Stylelint (`.stylelintrc.json`) — run `npm run lint:fix` to auto-fix
+- HTML: HTMLHint (`.htmlhintrc`)
+- No build tooling, no frameworks, no dependencies at runtime
 
 ---
 
